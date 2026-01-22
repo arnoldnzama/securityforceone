@@ -1017,6 +1017,17 @@ h4 {
         display: flex;
     }
     
+    /* Ajustement du logo texte pour mobile */
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Ajustement du bouton devis pour mobile */
+    .nav-container .btn-primary {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
     .nav-menu {
         display: none;
         position: absolute;
@@ -1182,6 +1193,25 @@ h4 {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+    
+    /* Ajustement encore plus petit pour très petits écrans */
+    .logo-text {
+        font-size: 0.95rem;
+    }
+    
+    .nav-container .btn-primary {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    /* Réduction de l'espacement du logo */
+    .nav-logo {
+        gap: 8px;
+    }
+    
+    .logo {
+        height: 35px;
     }
     
     .hero {
