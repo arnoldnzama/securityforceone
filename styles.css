@@ -2105,7 +2105,7 @@ input[type="file"]:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Avantages Formation */
+/* Avantages Formation - Style Accordéon */
 .avantages-formation {
     padding: 80px 0;
     background: var(--white);
@@ -2118,51 +2118,73 @@ input[type="file"]:hover {
     margin-bottom: 3rem;
 }
 
-.avantages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.avantages-accordion {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.avantage-card {
+.avantage-item {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    border-top: 4px solid var(--primary-color);
-}
-
-.avantage-card:hover {
-    transform: translateY(-5px);
-}
-
-.avantage-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-}
-
-.avantage-icon svg {
-    width: 30px;
-    height: 30px;
-    stroke: var(--white);
-}
-
-.avantage-card h3 {
-    font-size: 1.3rem;
-    color: var(--secondary-color);
     margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.avantage-card p {
+.avantage-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.avantage-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    background: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.avantage-question:hover {
+    background: #f8f9fa;
+}
+
+.avantage-question h3 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.avantage-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+    min-width: 20px;
+    text-align: center;
+}
+
+.avantage-item.active .avantage-toggle {
+    transform: rotate(45deg);
+}
+
+.avantage-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #f8f9fa;
+}
+
+.avantage-item.active .avantage-answer {
+    max-height: 200px;
+    padding: 1.5rem 2rem;
+}
+
+.avantage-answer p {
     color: var(--text-light);
+    margin: 0;
     line-height: 1.6;
 }
 
@@ -2210,8 +2232,8 @@ input[type="file"]:hover {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
-    .avantages-grid {
-        grid-template-columns: 1fr;
+    .avantages-accordion {
+        padding: 0 1rem;
     }
 }
 

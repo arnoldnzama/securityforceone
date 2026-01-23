@@ -302,3 +302,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Gestion de l'accordéon Avantages Formation
+document.addEventListener('DOMContentLoaded', function() {
+    const avantageItems = document.querySelectorAll('.avantage-item');
+    
+    avantageItems.forEach(item => {
+        const question = item.querySelector('.avantage-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Fermer tous les autres items
+            avantageItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle l'item actuel
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        });
+    });
+});
