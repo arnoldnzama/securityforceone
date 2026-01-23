@@ -95,20 +95,23 @@ h4 {
 
 .nav-logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
 }
 
 .logo {
-    height: 40px;
+    height: 35px;
     width: auto;
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     color: var(--secondary-color);
+    line-height: 1;
+    text-align: center;
 }
 
 .nav-menu {
@@ -1041,6 +1044,24 @@ h4 {
     .footer-contact {
         gap: 3rem;
     }
+    
+    /* Optimisation du header pour desktop */
+    .nav-logo {
+        min-width: 80px;
+    }
+    
+    .logo {
+        height: 38px;
+    }
+    
+    .logo-text {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .nav-menu {
+        gap: 1.8rem;
+    }
 }
 
 /* Responsive Design */
@@ -1048,6 +1069,15 @@ h4 {
     .atouts-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.8rem;
+    }
+    
+    /* Ajustement du header pour tablettes */
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: 0.75rem;
     }
 }
 
@@ -1058,7 +1088,11 @@ h4 {
     
     /* Ajustement du logo texte pour mobile */
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 0.7rem;
+    }
+    
+    .logo {
+        height: 30px;
     }
     
     /* Ajustement du bouton devis pour mobile */
@@ -1231,7 +1265,11 @@ h4 {
     
     /* Ajustement encore plus petit pour très petits écrans */
     .logo-text {
-        font-size: 0.95rem;
+        font-size: 0.65rem;
+    }
+    
+    .logo {
+        height: 28px;
     }
     
     .nav-container .btn-primary {
@@ -1241,7 +1279,7 @@ h4 {
     
     /* Réduction de l'espacement du logo */
     .nav-logo {
-        gap: 8px;
+        gap: 1px;
     }
     
     .logo {
