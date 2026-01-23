@@ -950,6 +950,11 @@ h4 {
     margin-bottom: 1rem;
 }
 
+.footer-logo .logo-text {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
 .footer-section h4 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -1002,6 +1007,13 @@ h4 {
 
 .legal-links a:hover {
     color: var(--primary-color);
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+    .footer-logo .logo-text {
+        font-size: 1rem;
+    }
 }
 
 /* Responsive Design */
