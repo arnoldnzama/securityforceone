@@ -1839,7 +1839,7 @@ input[type="file"]:hover {
 
 /* Hero Formation */
 .hero-formation {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #1a365d 100%);
+    background: var(--secondary-color);
     color: var(--white);
     padding: 120px 0 80px;
     min-height: 70vh;
