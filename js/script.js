@@ -1,12 +1,21 @@
-// Navigation mobile
+// Navigation mobile avec accessibilité améliorée
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
 
     if (hamburger && navMenu) {
+        // Toggle menu mobile
         hamburger.addEventListener('click', function () {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+
+            // Mise à jour ARIA
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            navMenu.setAttribute('id', 'nav-menu');
         });
 
         // Fermer le menu mobile lors du clic sur un lien
@@ -14,7 +23,32 @@ document.addEventListener('DOMContentLoaded', function () {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
+        });
+
+        // Fermer le menu avec la touche Escape
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.focus();
+            }
+        });
+
+        // Fermer le menu en cliquant en dehors
+        document.addEventListener('click', function (e) {
+            if (navMenu.classList.contains('active') &&
+                !navMenu.contains(e.target) &&
+                !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         });
     }
 });
@@ -52,11 +86,30 @@ const observer = new IntersectionObserver(function (entries) {
 }, observerOptions);
 
 // Observer les éléments à animer
-document.querySelectorAll('.category-card, .service-card, .secteur-card, .testimonial-card, .faq-item').forEach(el => {
+document.querySelectorAll('.category-card, .service-card, .secteur-card, .testimonial-card, .faq-item, .animate-on-scroll').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+});
+
+// Intersection Observer for scroll animations on new pages
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all elements with animate-on-scroll class
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+    });
 });
 
 // Gestion du formulaire de devis

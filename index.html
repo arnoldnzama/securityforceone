@@ -15,34 +15,28 @@
 
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navigation principale">
             <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="logo/logo.png" alt="Security Force One" class="logo">
+                <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">
+                    <img src="logo/logo.png" alt="Logo Security Force One" class="logo">
                     <span class="logo-text">Security Force One</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                    <li class="nav-item-dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"
-                                style="font-size: 0.7em; margin-left: 5px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#solutions" class="nav-link">Surveillance Humaine</a></li>
-                            <li><a href="#solutions" class="nav-link">Sécurité Technologique</a></li>
-                            <li><a href="#solutions" class="nav-link">Sécurité Mobile</a></li>
-                            <li><a href="#solutions" class="nav-link">Conseil & Risques</a></li>
-                        </ul>
+                </a>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html#accueil" class="nav-link active" role="menuitem">Accueil</a>
                     </li>
-                    <li><a href="#secteurs" class="nav-link">Secteurs</a></li>
-                    <li><a href="#insights" class="nav-link">Actualités</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li role="none"><a href="apropos.html" class="nav-link" role="menuitem">À Propos</a></li>
+                    <li role="none"><a href="services.html" class="nav-link" role="menuitem">Services</a></li>
+                    <li role="none"><a href="implantation.html" class="nav-link" role="menuitem">Implantation</a></li>
+                    <li role="none"><a href="engagement.html" class="nav-link" role="menuitem">Engagement</a></li>
+                    <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="hamburger" aria-label="Menu de navigation" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -72,8 +66,9 @@
                 <div class="hero-content-split">
                     <div class="hero-text-left">
                         <h1 class="hero-title">Expertise & <span class="highlight">Innovation technologique</span></h1>
-                        <p class="hero-subtitle">Protection maximale pour un service de gardiennage professionnel, garantissant sécurité renforcée, vigilance
-                             permanente et intervention rapide pour la protection des personnes et des biens.</p>
+                        <p class="hero-subtitle">Protection maximale pour un service de gardiennage professionnel,
+                            garantissant sécurité renforcée, vigilance
+                            permanente et intervention rapide pour la protection des personnes et des biens.</p>
                         <div class="hero-cta">
                             <a href="#expertise" class="btn-primary large">Notre expertise</a>
                         </div>
@@ -89,92 +84,69 @@
         <div class="swiper-pagination"></div>
     </section>
 
+    <!-- About Us Section -->
+    <section id="apropos" class="about-us-section">
+        <div class="container">
+            <div class="about-us-grid">
+                <div class="about-us-image">
+                    <img src="img/Charte Security F1-27-2.png" alt="Security Force One Team">
+                </div>
+                <div class="about-us-content">
+                    <h2 class="section-title">Qui sommes-nous ?</h2>
+                    <p class="about-text">
+                        Security Force One est une entreprise congolaise de sécurité privée dont le siège social est
+                        situé à Isiro, avec des représentations dans plusieurs provinces de la République Démocratique
+                        du Congo.
+                    </p>
+                    <p class="about-text">
+                        Nous avons été créés avec une vision claire : offrir des services de sécurité professionnels,
+                        modernes et conformes aux standards internationaux, tout en tenant compte des réalités locales.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Solutions Intégrées -->
     <section id="solutions" class="integrated-solutions">
         <div class="container">
             <div class="solutions-header">
-                <h2>La sécurité qui accompagne votre croissance</h2>
-                <p>Security Force One combine expertise humaine et technologie de pointe pour créer des solutions de
-                    sécurité adaptées à vos enjeux spécifiques.</p>
+                <h2>Votre partenaire sécurité en République Démocratique du Congo</h2>
+                <p>Basée à Isiro et présente dans plusieurs provinces de la RDC, Security Force One est une société
+                    spécialisée dans les solutions globales de sécurité. Nous accompagnons entreprises, institutions,
+                    ONG, sites miniers, commerces et particuliers dans la protection de leurs biens, de leurs
+                    collaborateurs et de leurs activités.</p>
+                <p>Grâce à une équipe rigoureusement sélectionnée, formée et encadrée, nous mettons à votre disposition
+                    des services fiables, professionnels et adaptés aux réalités sécuritaires du pays.</p>
             </div>
-            <div class="solution-categories">
-                <a href="#solutions" class="category-card">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <div class="category-content">
-                        <h3>Surveillance Humaine</h3>
-                        <p>Nos agents de sécurité qualifiés assurent la protection de vos sites et la sécurité de vos
-                            collaborateurs.</p>
-                        <span class="category-link">En savoir plus <svg viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg></span>
-                    </div>
-                </a>
-                <a href="#solutions" class="category-card">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                    </div>
-                    <div class="category-content">
-                        <h3>Sécurité Technologique</h3>
-                        <p>Vidéosurveillance intelligente, contrôle d'accès et systèmes d'alarme connectés.</p>
-                        <span class="category-link">En savoir plus <svg viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg></span>
-                    </div>
-                </a>
-                <a href="#solutions" class="category-card">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="1" y="3" width="15" height="13"></rect>
-                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                        </svg>
-                    </div>
-                    <div class="category-content">
-                        <h3>Sécurité Mobile</h3>
-                        <p>Rondes de surveillance, levée de doute et interventions rapides 24h/24.</p>
-                        <span class="category-link">En savoir plus <svg viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg></span>
-                    </div>
-                </a>
-                <a href="#solutions" class="category-card">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                            </path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <div class="category-content">
-                        <h3>Conseil & Risques</h3>
-                        <p>Audit de sûreté, gestion de crise et analyse de risques personnalisée.</p>
-                        <span class="category-link">En savoir plus <svg viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg></span>
-                    </div>
-                </a>
+
+            <div class="solutions-grid">
+                <div class="solution-column">
+                    <h3>Nos services</h3>
+                    <ul class="solution-list">
+                        <li><i class="fas fa-shield-alt"></i> Gardiennage professionnel</li>
+                        <li><i class="fas fa-video"></i> Sécurité électronique</li>
+                        <li><i class="fas fa-search"></i> Audit de sécurité</li>
+                        <li><i class="fas fa-user-graduate"></i> Formation en sécurité</li>
+                        <li><i class="fas fa-user-secret"></i> Escorte et protection rapprochée</li>
+                    </ul>
+                </div>
+
+                <div class="solution-column">
+                    <h3>Pourquoi choisir Security Force One ?</h3>
+                    <ul class="why-us-list">
+                        <li><i class="fas fa-check-circle"></i> Personnel qualifié et discipliné</li>
+                        <li><i class="fas fa-check-circle"></i> Couverture nationale</li>
+                        <li><i class="fas fa-check-circle"></i> Réactivité et disponibilité 24/7</li>
+                        <li><i class="fas fa-check-circle"></i> Approche personnalisée</li>
+                        <li><i class="fas fa-check-circle"></i> Respect strict de la confidentialité</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="solutions-footer">
+                <p><strong>Security Force One, la sécurité au service de votre tranquillité.</strong></p>
             </div>
         </div>
     </section>
@@ -345,7 +317,7 @@
     </section>
 
     <!-- Notre approche Section -->
-    <section class="approach-section">
+    <section id="apropos" class="approach-section">
         <div class="container">
             <div class="approach-grid">
                 <div class="approach-left">
@@ -503,56 +475,7 @@
 
 
 
-    <!-- Témoignages Section -->
-    <section class="testimonials">
-        <div class="container text-center">
-            <h2 class="section-title-centered">Expériences partagées</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Nous avons été très intéressés par la découverte de l'univers de la sécurité dans sa
-                            dimension électronique. Nous avons compris que les solutions Securitas pouvaient s'adapter à
-                            toutes sortes de secteurs d'activité et nous en avons retenu plusieurs, notamment dans la
-                            recherche ciblée par caméras et les autorisations d'accès.</p>
-                        <div class="testimonial-divider"></div>
-                        <div class="testimonial-author">
-                            <strong>Ludivine M.</strong>
-                            <span>Directrice Sécurité</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Securitas, n'est pas qu'un prestataire mais un partenaire expert qui nous accompagne dans
-                            notre travail et sera force de proposition pour anticiper de nouveaux risques.</p>
-                        <div class="testimonial-divider"></div>
-                        <div class="testimonial-author">
-                            <strong>Romain M.</strong>
-                            <span>Responsable sécurité</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>Le Groupe Securitas a une dimension à la fois nationale et internationale comme notre propre
-                            groupe. Securitas France dispose d'un maillage du territoire important qu'aucun autre
-                            prestataire ne peut se vanter d'avoir et qui va de pair avec un management de proximité. Le
-                            partenariat de Securitas est pour nous incontournable.</p>
-                        <div class="testimonial-divider"></div>
-                        <div class="testimonial-author">
-                            <strong>Guillaume B.</strong>
-                            <span>Responsable sûreté</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -567,8 +490,8 @@
                         <img src="logo/logo.png" alt="Security Force One" class="logo">
                         <span class="logo-text">Security Force One</span>
                     </div>
-                    
-                    
+
+
 
                 </div>
                 <div class="footer-links">
@@ -580,17 +503,17 @@
                         <li><a href="#solutions">Conseil & Risques</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Pages populaires</h4>
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#insights">Actualités</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        
+
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Secteurs</h4>
                     <ul>
@@ -624,7 +547,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Security Force One. Tous droits réservés.| Créé par <a href="https://wa.me/243810644455"
                         target="_blank" style="color: inherit; text-decoration: underline;">Arnold Nzama</a></p>
-                
+
             </div>
         </div>
     </footer>
