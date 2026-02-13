@@ -158,20 +158,27 @@ window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
+    // Only run this logic if we're on a page with sections (like index.html)
+    if (sections.length > 0) {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+        navLinks.forEach(link => {
+            // Only modify active state if we found a current section
+            if (current) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            }
+        });
+    }
+    // If no sections, preserve the active class set in HTML (for standalone pages)
 });
 
 // Animation des compteurs (si on ajoute des statistiques)
