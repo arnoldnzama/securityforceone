@@ -835,3 +835,30 @@ document.head.appendChild(frameStyles);
 
 // Console log pour confirmer le chargement des animations
 console.log('✨ Animations professionnelles chargées avec succès!');
+
+
+// ========================================
+// BOUTON RETOUR EN HAUT DE PAGE
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (scrollToTopBtn) {
+        // Afficher/masquer le bouton selon la position de scroll
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Retour en haut au clic
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
