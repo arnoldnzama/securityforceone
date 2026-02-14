@@ -383,12 +383,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const rangeItems = document.querySelectorAll('.range-item');
 
     rangeItems.forEach(item => {
-        item.addEventListener('click', function () {
-            // Toggle la classe active sur l'item parent (optionnel si on veut du style)
-            this.classList.toggle('active');
+        const header = item.querySelector('.range-item-header') || item;
+        const description = item.querySelector('.range-item-description');
+        
+        header.addEventListener('click', function () {
+            // Toggle la classe active sur l'item parent
+            item.classList.toggle('active');
 
             // Récupérer l'icône à l'intérieur
-            const icon = this.querySelector('i');
+            const icon = item.querySelector('i');
             if (icon) {
                 if (icon.classList.contains('fa-plus')) {
                     icon.classList.remove('fa-plus');
@@ -396,6 +399,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     icon.classList.remove('fa-minus');
                     icon.classList.add('fa-plus');
+                }
+            }
+            
+            // Gérer l'affichage de la description si elle existe
+            if (description) {
+                if (item.classList.contains('active')) {
+                    description.style.maxHeight = description.scrollHeight + 'px';
+                    description.style.opacity = '1';
+                } else {
+                    description.style.maxHeight = '0';
+                    description.style.opacity = '0';
                 }
             }
         });
